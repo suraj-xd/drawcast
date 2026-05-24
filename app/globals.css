@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+:root {
+  /* Core */
+  --background: #fafafa;
+  --foreground: #0f172a;
+
+  /* Surfaces */
+  --surface: #f1f5f9;
+  --surface-hover: #e2e8f0;
+  --surface-elevated: #e2e8f0;
+
+  /* Chat-specific */
+  --chat-ai-bubble: #f1f5f9;
+  --chat-user-bubble: #e2e8f0;
+  --chat-input-bg: #f1f5f9;
+
+  /* Brand - Excalidraw violet, refined */
+  --primary: #5b57d1;
+  --primary-hover: #4f4bc4;
+  --primary-foreground: #ffffff;
+
+  /* Neutral */
+  --secondary: #3d4551;
+  --secondary-hover: #2d333b;
+  --secondary-foreground: #ffffff;
+
+  /* Accent - Action red */
+  --accent: #e85555;
+  --accent-hover: #dc4444;
+  --accent-foreground: #ffffff;
+
+  /* Text */
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --text-placeholder: #94a3b8;
+
+  /* Borders & Dividers */
+  --border: #d1d5db;
+  --border-subtle: #e5e7eb;
+  --ring: #5b57d1;
+
+  /* Semantic */
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --warning: #d97706;
+  --warning-light: #fef3c7;
+  --error: #dc2626;
+  --error-light: #fee2e2;
+
+  /* Voice/Recording */
+  --recording: #ef4444;
+  --recording-pulse: #fca5a5;
+
+  /* Canvas */
+  --canvas-bg: #ffffff;
+  --canvas-grid: #e5e7eb;
+}
+
+/* Dark Mode - only when explicitly set via class */
+.dark {
+  /* Core — ChatGPT deep black */
+  --background: #0d0d0d;
+  --foreground: #ececec;
+
+  /* Surfaces — ElevenLabs layered grays */
+  --surface: #171717;
+  --surface-hover: #1e1e1e;
+  --surface-elevated: #2a2a2a;
+
+  /* Brand — keep existing violet */
+  --primary: #7c78ff;
+  --primary-hover: #8b87ff;
+  --primary-foreground: #ffffff;
+
+  /* Neutral */
+  --secondary: #6b7280;
+  --secondary-hover: #9ca3af;
+  --secondary-foreground: #ffffff;
+
+  /* Accent */
+  --accent: #f87171;
+  --accent-hover: #fca5a5;
+  --accent-foreground: #0d0d0d;
+
+  /* Text */
+  --text: #ececec;
+  --text-muted: #a0a0a0;
+  --text-subtle: #6b6b6b;
+  --text-placeholder: #4a4a4a;
+
+  /* Borders — near-invisible */
+  --border: #2a2a2a;
+  --border-subtle: #1e1e1e;
+  --ring: #7c78ff;
+
+  /* Chat-specific */
+  --chat-ai-bubble: #1e1e1e;
+  --chat-user-bubble: #2a2a2a;
+  --chat-input-bg: #1e1e1e;
+
+  /* Semantic */
+  --success: #4ade80;
+  --success-light: #166534;
+  --warning: #fbbf24;
+  --warning-light: #854d0e;
+  --error: #f87171;
+  --error-light: #991b1b;
+
+  /* Voice/Recording */
+  --recording: #f87171;
+  --recording-pulse: #ef4444;
+
+  /* Canvas */
+  --canvas-bg: #121212;
+  --canvas-grid: #2d2d2d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-placeholder: var(--text-placeholder);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-recording: var(--recording);
+  --color-recording-pulse: var(--recording-pulse);
+  --color-canvas-bg: var(--canvas-bg);
+  --color-surface-elevated: var(--surface-elevated, var(--surface-hover));
+  --color-chat-ai-bubble: var(--chat-ai-bubble, var(--surface));
+  --color-chat-user-bubble: var(--chat-user-bubble, var(--surface-hover));
+  --color-chat-input-bg: var(--chat-input-bg, var(--surface));
+}
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* Focus rings */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-subtle);
+}
