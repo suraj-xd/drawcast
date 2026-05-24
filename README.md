@@ -4,7 +4,8 @@
 
 # Drawcast
 
-**The whiteboard that listens.**
+**The realtime whiteboard that listens.**  
+**Beta / WIP:** useful for rough voice-led diagrams, still uneven around generation quality and recovery.
 
 Talk through your idea — corrections, second thoughts, and all. It keeps up.
 
@@ -16,9 +17,15 @@ Talk through your idea — corrections, second thoughts, and all. It keeps up.
 
 ## What is Drawcast?
 
-Drawcast turns voice into [Excalidraw](https://excalidraw.com) diagrams in real time. Describe anything out loud — a system architecture, a business process, a research workflow — and it draws it as a clean, editable diagram.
+Drawcast is a realtime AI whiteboard that turns voice into [Excalidraw](https://excalidraw.com) diagrams. Describe anything out loud — a system architecture, a business process, a research workflow — and it draws it as a clean, editable diagram.
 
 No code. No syntax. No drag-and-drop.
+
+## Current Beta Snapshot
+
+<img src="public/drawcast-readme-screenshot.png" alt="Drawcast beta editor showing a rough rate limiter diagram and the chat agent fallback flow" width="100%">
+
+Drawcast is still a beta/WIP build. The agent can draft diagrams from chat or voice, but complex requests may still fall back to rough basic-shape sketches while the canvas flow catches up.
 
 ## Features
 
@@ -36,6 +43,7 @@ No code. No syntax. No drag-and-drop.
 | Layout | [Dagre](https://github.com/dagrejs/dagre) |
 | Voice | [OpenAI Realtime API](https://platform.openai.com/docs/guides/realtime) |
 | Storage | [Dexie](https://dexie.org) (IndexedDB) |
+| Analytics | [Vercel Web Analytics](https://vercel.com/analytics) |
 
 ## Getting Started
 

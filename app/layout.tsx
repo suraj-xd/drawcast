@@ -23,36 +23,47 @@ const architectsDaughter = Architects_Daughter({
 });
 
 export const metadata: Metadata = {
-  title: "Drawcast",
+  title: "Drawcast Beta",
   description:
-    "Speak your idea — watch it become a diagram. Drawcast turns voice into Excalidraw diagrams in real time.",
+    "Speak your idea and watch it become an editable diagram. Drawcast is a beta voice-to-Excalidraw canvas.",
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/drawcast-logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_BASE_URL ?? "https://drawcast.vercel.app"
   ),
   openGraph: {
-    title: "Drawcast",
+    title: "Drawcast Beta",
     description:
-      "Speak your idea — watch it become a diagram. Drawcast turns voice into Excalidraw diagrams in real time.",
+      "Speak your idea and watch it become an editable diagram. Drawcast is a beta voice-to-Excalidraw canvas.",
     siteName: "Drawcast",
     images: [
       {
-        url: "/drawcast-logo.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Drawcast — voice-to-diagram",
+        alt: "Drawcast Beta voice-to-diagram canvas",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drawcast",
+    title: "Drawcast Beta",
     description:
-      "Speak your idea — watch it become a diagram. Drawcast turns voice into Excalidraw diagrams in real time.",
-    images: ["/drawcast-logo.png"],
+      "Speak your idea and watch it become an editable diagram. Drawcast is a beta voice-to-Excalidraw canvas.",
+    images: ["/og-image.png"],
   },
 };
 

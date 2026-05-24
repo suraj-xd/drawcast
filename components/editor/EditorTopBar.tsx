@@ -4,6 +4,7 @@ import { IconLock, IconLayoutSidebar, IconSparkles, IconSun, IconMoon, IconSetti
 import type { Diagram } from '@/types/library'
 import type { ExcalidrawCanvasHandle } from '@/components/editor/ExcalidrawCanvas'
 import type { ThemeOption } from '@/hooks/useUserSettings'
+import BetaBadge from './BetaBadge'
 import EditorMenu, { type EditorMenuHandle } from './EditorMenu'
 
 interface Props {
@@ -40,6 +41,7 @@ export default function EditorTopBar({
       <div className="flex items-center gap-2">
         <img src="/drawcast-logo.png" alt="Drawcast" className="w-6 h-6 shrink-0 rounded-lg" />
         <span className="text-sm font-semibold text-foreground tracking-tight">Drawcast</span>
+        <BetaBadge />
       </div>
 
       <button

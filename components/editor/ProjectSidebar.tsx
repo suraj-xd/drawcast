@@ -4,7 +4,6 @@ import { useMemo, useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLiveQuery } from "dexie-react-hooks";
-import { nanoid } from "nanoid";
 import {
   IconPlus,
   IconMessage,
@@ -15,6 +14,7 @@ import {
   IconTrash,
 } from "@tabler/icons-react";
 import { db } from "@/lib/db";
+import { createDiagram } from "@/lib/diagram";
 
 interface Props {
   isOpen: boolean;
@@ -233,27 +233,8 @@ export default function ProjectSidebar({
   };
 
   const handleNewDiagram = async () => {
-    const newDiagram = {
-      id: nanoid(),
-      name: "Untitled",
-      folderId: null,
-      elements: [],
-      files: {},
-      graph: null,
-      transcript: "",
-      diagramType: "freeform" as const,
-      thumbnail: null,
-      tags: [],
-      starred: false,
-      locked: false,
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
-      lastOpenedAt: Date.now(),
-      version: 1,
-      trashedAt: null,
-      metadata: {},
-    };
-    await db.diagrams.add(newDiagram as any);
+    const newDiagram = createDiagram({ name: "Untitled" });
+    await db.diagrams.add(newDiagram);
     router.push(`/d/${newDiagram.id}`);
   };
 
@@ -352,8 +333,11 @@ export default function ProjectSidebar({
         </nav>
 
         <div className="px-3 py-3 border-t border-border-subtle">
-          <span className="text-[11px] text-placeholder">
-            Diagrams are stored locally in your browser.
+          <span className="block text-[11px] font-medium uppercase tracking-wide text-warning">
+            Beta build
+          </span>
+          <span className="mt-1 block text-[11px] leading-4 text-placeholder">
+            Diagrams are stored locally. AI drawing may still be rough.
           </span>
         </div>
       </div>

@@ -21,6 +21,7 @@ import type { Diagram } from "@/types/library";
 import type { UserSettings } from "@/hooks/useUserSettings";
 import type { DiagramPlaybackMode } from "@/lib/render/playback";
 import { useRealtimeCanvasAgent } from "@/hooks/editor/useRealtimeCanvasAgent";
+import BetaBadge from "./BetaBadge";
 
 // ─── Public handle ─────────────────────────────────────────────
 
@@ -185,8 +186,11 @@ const ChatPanel = forwardRef<ChatPanelHandle, ChatPanelProps>(
           lg:relative lg:z-auto
         `}>
         {/* ── Header ─────────────────────────────────────────── */}
-        <div className="flex items-center justify-between px-4 py-3">
-          <h2 className="text-sm font-semibold text-foreground">Chat</h2>
+        <div className="flex items-center justify-between gap-3 px-4 py-3">
+          <div className="flex min-w-0 items-center gap-2">
+            <h2 className="text-sm font-semibold text-foreground">Chat</h2>
+            <BetaBadge />
+          </div>
           <button
             type="button"
             onClick={onClose}
