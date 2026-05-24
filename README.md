@@ -9,7 +9,7 @@
 
 Talk through your idea — corrections, second thoughts, and all. It keeps up.
 
-[Try it](https://drawcast.vercel.app) &middot; [Report Bug](https://github.com/suraj-xd/drawcast/issues)
+[Try it](https://drawwcast.vercel.app/) &middot; [Report Bug](https://github.com/suraj-xd/drawcast/issues)
 
 </div>
 
